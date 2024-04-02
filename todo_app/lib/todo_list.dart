@@ -5,6 +5,15 @@ class TodoList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Todo List'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, '/add-todo'),
+        tooltip: 'Add Todo',
+        child: const Icon(Icons.add),
+      ),
+    );
   }
 }
