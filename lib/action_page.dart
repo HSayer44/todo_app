@@ -16,19 +16,30 @@ class ActionPage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Action Page'),
       ),
-      body: const Center(
+      body:  Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'Go back to see the result',
             ),
+            const Text(
+              'You have pushed the button this many times:',
+            ),
+            BlocBuilder<CounterBloc, int>(
+                builder: (context, counter) {
+                  return Text(
+                    '$counter',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  );
+                }),
           ],
         ),
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+
           FloatingActionButton(
             heroTag: 'button plus',  // to prevent the error: same hero tag
             onPressed: () => counterBloc.add(CounterIncremented()),
@@ -36,8 +47,14 @@ class ActionPage extends StatelessWidget {
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
+            heroTag: 'button restart',
+            onPressed: () => counterBloc.add(CounterRestarted()),
+            tooltip: 'Restart',
+            child: const Icon(Icons.restart_alt),
+          ),
+          FloatingActionButton(
             heroTag: 'button minus',
-            onPressed: () {},
+            onPressed: () => counterBloc.add(CounterDecremented()),
             tooltip: 'Decrement',
             child: const Icon(Icons.remove),
           ),
