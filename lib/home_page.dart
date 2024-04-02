@@ -1,4 +1,5 @@
 import 'package:bloc_tutorial/action_page.dart';
+import 'package:bloc_tutorial/bloc/counter_bloc.dart';
 import 'package:bloc_tutorial/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,8 +24,7 @@ class MyHomePage extends StatelessWidget {
             const Text(
               'You have pushed the button this many times:',
             ),
-            BlocBuilder<CounterCubit, int>(
-                bloc: counterCubit,
+            BlocBuilder<CounterBloc, int>(
                 builder: (context, counter) {
                   return Text(
                     '$counter',

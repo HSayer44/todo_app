@@ -1,6 +1,8 @@
+import 'package:bloc_tutorial/bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'bloc/counter_events.dart';
 import 'cubit/counter_cubit.dart';
 
 class ActionPage extends StatelessWidget {
@@ -8,7 +10,7 @@ class ActionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final counterCubit = BlocProvider.of<CounterCubit>(context);
+    final counterBloc = BlocProvider.of<CounterBloc>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -29,13 +31,13 @@ class ActionPage extends StatelessWidget {
         children: [
           FloatingActionButton(
             heroTag: 'button plus',  // to prevent the error: same hero tag
-            onPressed: () => counterCubit.increment(),
+            onPressed: () => counterBloc.add(CounterIncremented()),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
             heroTag: 'button minus',
-            onPressed: () => counterCubit.decrement(),
+            onPressed: () {},
             tooltip: 'Decrement',
             child: const Icon(Icons.remove),
           ),
