@@ -2,9 +2,6 @@ import 'package:bloc_tutorial/bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'bloc/counter_events.dart';
-import 'cubit/counter_cubit.dart';
-
 class ActionPage extends StatelessWidget {
   const ActionPage({super.key});
 
