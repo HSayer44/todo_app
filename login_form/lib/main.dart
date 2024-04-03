@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:login_form/bloc/auth_bloc.dart';
+import 'package:login_form/bloc_observer/bloc_observer.dart';
 import 'package:login_form/login_screen.dart';
 import 'package:login_form/pallete.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
+  Bloc.observer = AppBlocObserver();
   runApp(const MyApp());
 }
 
