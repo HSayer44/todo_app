@@ -65,6 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     LoginField(hintText: 'Password', controller: passwordController),
                     const SizedBox(height: 15),
                     GradientButton(
+                      title: 'Login',
                       onPressed: () {
                         context.read<AuthBloc>().add(
                               AuthLoginRequested(
