@@ -20,9 +20,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 'Sign in',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
               ),
-              SizedBox(height: 50),
-              const Text('or', style: TextStyle(fontSize: 17),),
-              SizedBox(height: 15),
+              const SizedBox(height: 50),
+              const Text('or', style: TextStyle(fontSize: 17)),
+              const SizedBox(height: 15),
 
             ],
           ),
