@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_form/widget/gradient_button.dart';
 import 'package:login_form/widget/social_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,6 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset('assets/images/signin_balls.png'),
                 const Text(
@@ -27,8 +29,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SocialButton(iconPath: 'assets/svgs/g_logo.svg', label:'Continue with Google'),
                 const SizedBox(height: 20),
                 const SocialButton(iconPath: 'assets/svgs/f_logo.svg', label:'Continue with Facebook'),
+                const SizedBox(height: 15),
                 const Text('or', style: TextStyle(fontSize: 17)),
                 const SizedBox(height: 15),
+                const GradientButton(),
 
               ],
             ),
